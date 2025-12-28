@@ -5,6 +5,28 @@ const navbar = document.getElementById("navbar")
 const scrollToTopBtn = document.getElementById("scroll-to-top")
 const contactForm = document.getElementById("contact-form")
 
+const form = document.getElementById("contact-form");
+const status = document.getElementById("form-status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { Accept: "application/json" },
+    });
+
+    if (response.ok) {
+      status.textContent = "Message sent successfully.";
+      form.reset();
+    } else {
+      status.textContent = "Something went wrong. Try again.";
+    }
+  });
+
+
 // Mobile Navigation Toggle
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active")
@@ -191,7 +213,8 @@ contactForm.addEventListener("submit", (e) => {
     submitBtn.disabled = true
 
     setTimeout(() => {
-      alert("Thank you for your message! I'll get back to you soon.")
+      // alert("Thank you for your message! I'll get back to you soon.")
+      status.textContent = "";
       contactForm.reset()
       submitBtn.textContent = originalText
       submitBtn.disabled = false

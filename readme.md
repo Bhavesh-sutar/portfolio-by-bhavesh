@@ -3,9 +3,7 @@
 Personal portfolio website showcasing my background, experience, and projects as a Computer Science student with Python development experience.
 
 ## Live Demo
-
-(Will be updated after deployment)
-➡️ **[https://bhavesh-sutar.github.io/portfolio-by-bhavesh/](https://bhavesh-sutar.github.io/portfolio-by-bhavesh/)**
+ **[https://bhavesh-sutar.github.io/portfolio-by-bhavesh/](https://bhavesh-sutar.github.io/portfolio-by-bhavesh/)**
 
 ## About
 
